@@ -1,4 +1,4 @@
-const JSequence = {}
+var JSequence = {}
 
 /**
  * Creates a time-based sequencer function that executes actions at constant
@@ -11,10 +11,8 @@ JSequence.timedSequencer = function (time) {
     return function (actions) {
         var interval = 0
 
-        for (let index in actions) {
-            interval += time
-            window.setTimeout(actions[index], interval)
-        }
+        for (var index in actions)
+            window.setTimeout(actions[index], interval += time)
     }
 }
 
